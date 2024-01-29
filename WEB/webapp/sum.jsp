@@ -15,7 +15,7 @@
 <body>
 <table border="1">
 	<tr>
-		<td>1~10까지의 총합</td>
+		<td>1~100까지의 총합</td>
 		<td><%=sum %></td>
 	</tr>
 </table>
