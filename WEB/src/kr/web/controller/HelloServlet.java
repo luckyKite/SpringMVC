@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import kr.web.util.MyUtil;
 
 //JavaEE -> Servlet(서블릿)의 골격
+@WebServlet("/hs.do") // <- web.xml
 public class HelloServlet extends HttpServlet {
 
 	public void service(HttpServletRequest req, HttpServletResponse resp) 
