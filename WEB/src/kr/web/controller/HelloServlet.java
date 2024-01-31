@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 import kr.web.util.MyUtil;
 
@@ -20,7 +18,7 @@ public class HelloServlet extends HttpServlet {
 		MyUtil my = new MyUtil();
 		int sum = my.hap();
 		
-		//쵸정한 클라이언트 응답
+		//요정한 클라이언트 응답하기?
 		PrintWriter out = resp.getWriter();
 		out.println("<html>");
 		out.println("<body>");
