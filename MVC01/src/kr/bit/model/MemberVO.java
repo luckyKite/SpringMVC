@@ -24,7 +24,6 @@ public class MemberVO {
 	}
 	
 	public MemberVO(String id, String pass, String name, int age, String email, String phone) {
-		super();
 		this.id = id;
 		this.pass = pass;
 		this.name = name;

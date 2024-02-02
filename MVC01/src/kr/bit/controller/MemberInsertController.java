@@ -45,12 +45,13 @@ public class MemberInsertController extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		int cnt=dao.memberInsert(vo);
 		PrintWriter out=response.getWriter();
+		
 		if(cnt>0) {
 			//가입성공
 			out.println("insert success!");
 		} else {
 			//가입실패 -> 예외 객체를 만들어서 WAS에게 던지자
-			new ServletException("not insert");
+			throw new ServletException("not insert");
 		}
 	}
 

@@ -5,7 +5,8 @@ create table member(
 	name varchar(30) not null,
 	age int not null,
 	email varchar(30) not null,
-	phone varchar(30) not null
+	phone varchar(30) not null,
+	unique key(id)
 );
 
 select * from member;
@@ -16,3 +17,5 @@ value('admin','admin','관리자',40,'admin@gmail.com','010-1111-2222');
 update member set age=45, phone='010-2222-4444' where id='admin';
 
 delete from member where id='admin';
+
+drop table member;
