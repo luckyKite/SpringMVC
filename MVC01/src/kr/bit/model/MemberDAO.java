@@ -106,6 +106,35 @@ public class MemberDAO {
 	}
 	
 	
+	//내용 확인하기
+	public MemberVO memberContent(int num) {
+		String SQL = "select * from member where num=?";
+		getConnect();
+		MemberVO vo = null;
+		try {
+			ps=conn.prepareStatement(SQL);
+			ps.setInt(1, num);
+			rs=ps.executeQuery();
+			
+			if(rs.next()) {
+				//회원 한명의 정보를 가져와서 -> 묶고(VO)
+				num=rs.getInt("num");
+				String id=rs.getString("id");
+				String pass=rs.getString("pass");
+				String name=rs.getString("name");
+				int age=rs.getInt("age");
+				String email=rs.getString("email");
+				String phone=rs.getString("phone");
+				vo = new MemberVO(num, id, pass, name, age, email, phone);				
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return vo;
+	}
+	
 	
 	//데이터베이스 연결 끊기
 	public void dbClose() {
